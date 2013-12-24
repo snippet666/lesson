@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8" />
+<title>Flexbox01</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.14.0/build/cssreset/cssreset-min.css">
+<style type="text/css">
+/* base */
+body{ font-family: Arial, Helvetica,"メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HiraKakuPro-W3","ＭＳ Ｐゴシック","MS PGothic",sans-serif;}
+h1 {
+font-family: Georgia;
+font-size: 2em;
+margin: 1em 0 .3em .3em;
+}
+
+/* item */
+div > p {
+padding: 10px;
+background: #ccc;
+}
+div > p+p {
+background: #bbb;
+}
+div > p+p+p {
+background: #aaa;
+}
+div > p+p+p+p {
+background: #999;
+}
+div > p+p+p+p+p {
+background: #888;
+}
+div > p+p+p+p+p+p {
+background: #777;
+}
+div > p+p+p+p+p+p+p {
+background: #666;
+}
+div > p span {
+font-family: Georgia;
+font-size: 2em;
+}
+
+
+/* = flexbox
+-------------------- */
+div{
+margin: .3em 0 1em;
+background: #000;
+width: 600px;
+display: flex;
+}
+
+/* justify-content */
+div.justify-content_center {
+justify-content: center; /* 子要素を中央寄せ */
+}
+div.justify-content_space-between {
+justify-content: space-between; /* 均等に間を空ける */
+}
+div.justify-content_space-around {
+justify-content: space-around; /* 両端に間隔をあけて、均等に間を空ける */
+}
+
+/* align-items */
+div.align-items_flex-start {
+align-items: flex-start; /* 上揃え */
+}
+div.align-items_flex-end {
+align-items: flex-end; /* 下揃え */
+}
+div.align-items_center {
+align-items: center; /* 中央揃え */
+}
+div.align-items_baseline {
+align-items: baseline; /* ベースライン */
+}
+div.align-items_stretch {
+align-items: stretch; /* 最大値にあわせる */
+}
+
+
+</style>
+</head>
+<body>
+
+<h1>justify-content</h1>
+<p>justify-content: center;</p>
+<div class="justify-content_center">
+	<p><span>1</span><br>aaaa</p>
+	<p><span>2</span><br>aaaa<br>aaaa</p>
+	<p><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<p>justify-content: space-between;</p>
+<div class="justify-content_space-between">
+	<p><span>1</span><br>aaaa</p>
+	<p><span>2</span><br>aaaa<br>aaaa</p>
+	<p><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<p>justify-content: space-around;</p>
+<div class="justify-content_space-around">
+	<p><span>1</span><br>aaaa</p>
+	<p><span>2</span><br>aaaa<br>aaaa</p>
+	<p><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<!-- ////////////////////////////////// -->
+
+<h1>align-items</h1>
+<p>align-items: flex-start;</p>
+<div class="align-items_flex-start">
+	<p><span>1</span><br>aaaa</p>
+	<p><span>2</span><br>aaaa<br>aaaa</p>
+	<p><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<p>align-items: flex-end;</p>
+<div class="align-items_flex-end">
+	<p><span>1</span><br>aaaa</p>
+	<p><span>2</span><br>aaaa<br>aaaa</p>
+	<p><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<p>align-items: center;</p>
+<div class="align-items_center ">
+	<p><span>1</span><br>aaaa</p>
+	<p><span>2</span><br>aaaa<br>aaaa</p>
+	<p><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<p>align-items: baseline;</p>
+<div class="align-items_baseline">
+	<p><span>1</span><br>aaaa</p>
+	<p><span>2</span><br>aaaa<br>aaaa</p>
+	<p><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<p>align-items: stretch;</p>
+<div class="align-items_stretch">
+	<p><span>1</span><br>aaaa</p>
+	<p><span>2</span><br>aaaa<br>aaaa</p>
+	<p><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<!-- ////////////////////////////////// -->
+
+</body>
+</html>

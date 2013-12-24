@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8" />
+<title>Flexbox02</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.14.0/build/cssreset/cssreset-min.css">
+<style type="text/css">
+/* base */
+body{ font-family: Arial, Helvetica,"メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HiraKakuPro-W3","ＭＳ Ｐゴシック","MS PGothic",sans-serif;}
+h1 {
+font-family: Georgia;
+font-size: 2em;
+margin: 1em 0 .3em .3em;
+}
+
+/* item */
+div > p {
+padding: 10px;
+background: #ccc;
+}
+div > p+p {
+background: #bbb;
+}
+div > p+p+p {
+background: #aaa;
+}
+div > p+p+p+p {
+background: #999;
+}
+div > p+p+p+p+p {
+background: #888;
+}
+div > p+p+p+p+p+p {
+background: #777;
+}
+div > p+p+p+p+p+p+p {
+background: #666;
+}
+div > p span {
+font-family: Georgia;
+font-size: 2em;
+}
+
+
+/* = flexbox
+-------------------- */
+div{
+margin: .3em 0 1em;
+background: #000;
+width: 600px;
+display: flex;
+}
+
+/* flex */
+div p.flex_1 {
+flex: 1;
+}
+div p.flex_2 {
+flex: 2;
+}
+
+/* flex-basis */
+div p.flex-basis_100px {
+flex-basis: 100px;
+}
+
+/* flex-wrap */
+div.flex-wrap_wrap {
+flex-wrap: wrap;
+}
+
+</style>
+</head>
+<body>
+
+<h1>flex</h1>
+<p>none</p>
+<div>
+	<p><span>1</span><br>aaaa</p>
+	<p><span>2</span><br>aaaa<br>aaaa</p>
+	<p><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<p>flex: 1;</p>
+<div>
+	<p class="flex_1"><span>1</span><br>aaaa</p>
+	<p class="flex_1"><span>2</span><br>aaaa<br>aaaa</p>
+	<p class="flex_1"><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex_1"><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex_1"><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex_1"><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex_1"><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<p>item2 flex: 2;</p>
+<div>
+	<p class="flex_1"><span>1</span><br>aaaa</p>
+	<p class="flex_2"><span>2</span><br>aaaa<br>aaaa</p>
+	<p class="flex_1"><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex_1"><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex_1"><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex_1"><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex_1"><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<!-- ////////////////////////////////// -->
+
+<h1>flex-basis + flex-wrap</h1>
+<p>none</p>
+<div>
+	<p><span>1</span><br>aaaa</p>
+	<p><span>2</span><br>aaaa<br>aaaa</p>
+	<p><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<p>flex-basis: 100px;</p>
+<div>
+	<p class="flex-basis_100px"><span>1</span><br>aaaa</p>
+	<p class="flex-basis_100px"><span>2</span><br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px"><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px"><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px"><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px"><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px"><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<p>div(flex-wrap: wrap;) p(flex-basis: 100px;)</p>
+<div class="flex-wrap_wrap">
+	<p class="flex-basis_100px"><span>1</span><br>aaaa</p>
+	<p class="flex-basis_100px"><span>2</span><br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px"><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px"><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px"><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px"><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px"><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<p>div(flex-wrap: wrap;) p(flex-basis: 100px; flex: 1;)</p>
+<div class="flex-wrap_wrap">
+	<p class="flex-basis_100px flex_1"><span>1</span><br>aaaa</p>
+	<p class="flex-basis_100px flex_1"><span>2</span><br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px flex_1"><span>3</span><br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px flex_1"><span>4</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px flex_1"><span>5</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px flex_1"><span>6</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+	<p class="flex-basis_100px flex_1"><span>7</span><br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa<br>aaaa</p>
+</div>
+
+<!-- ////////////////////////////////// -->
+
+</body>
+</html>

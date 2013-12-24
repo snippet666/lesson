@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8" />
+<title>background-clip</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.14.0/build/cssreset/cssreset-min.css">
+<style type="text/css">
+body{ font-family: Arial, Helvetica,"メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HiraKakuPro-W3","ＭＳ Ｐゴシック","MS PGothic",sans-serif;}
+p {
+height: 50px;
+line-height: 50px;
+width: 400px;
+padding: 5px;
+border: solid 5px #ccc;
+margin: 10px auto;
+text-align: center;
+color: #999;
+font-weight: bold;
+
+background: linear-gradient(to bottom, rgba(200,200,200,1) 0%,rgba(230,230,230,1) 100%),
+            linear-gradient(to bottom, rgba(180,180,180,1) 0%,rgba(150,150,150,1) 100%);
+}
+p.border-box {
+background-clip: border-box;
+}
+p.content-box {
+background-clip: content-box;
+}
+p.content-box_border-box {
+background-clip: content-box,border-box;
+}
+p.border-box_content-box {
+background-clip: border-box,content-box;
+}
+
+</style>
+</head>
+<body>
+<div>
+	<p class="border-box"> background-clip: border-box; (default)</p>
+	<p class="content-box">background-clip: content-box;</p>
+	<p class="content-box_border-box">background-clip: content-box,border-box;</p>
+	<p class="border-box_content-box">background-clip: border-box,content-box;</p>
+</div>
+</body>
+</html>
