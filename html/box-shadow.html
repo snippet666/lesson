@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8" />
+<title>box-shadow</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.14.0/build/cssreset/cssreset-min.css">
+<style type="text/css">
+/* base */
+body{
+font-family: Arial, Helvetica,"メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HiraKakuPro-W3","ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+margin: 10px;
+}
+h1 {
+font-family: Georgia;
+font-size: 2em;
+margin: 1em 0 .3em;
+}
+
+/* layout */
+.flex {
+display: flex;
+flex-wrap: wrap;
+}
+.flex > div {
+flex-basis: 230px;
+border-radius: 3px;
+box-shadow: 0 0 2px #ddd;
+margin: 10px;
+}
+
+/* item */
+div.flex p {
+font-size: .8em;
+height: 8.5em;
+margin: 30px;
+padding: 10px;
+background: #666;
+color: #f5f5f5;
+}
+
+/* box-shadow */
+.box-shadow01                   { box-shadow: 5px 5px;}
+.box-shadow01_color             { box-shadow: 5px 5px           #000;}
+.box-shadow01_color_blur        { box-shadow: 5px 5px 15px      #000;}
+.box-shadow01_color_spread      { box-shadow: 5px 5px  0   10px #000;}
+.box-shadow01_color_blur_spread { box-shadow: 5px 5px 15px 10px #000;}
+.box-shadow01_colorRGB             { box-shadow: 5px 5px           rgba(0, 0, 0, .5);}
+.box-shadow01_colorRGB_blur        { box-shadow: 5px 5px 15px      rgba(0, 0, 0, .5);}
+.box-shadow01_colorRGB_spread      { box-shadow: 5px 5px  0   10px rgba(0, 0, 0, .5);}
+.box-shadow01_colorRGB_blur_spread { box-shadow: 5px 5px 15px 10px rgba(0, 0, 0, .5);}
+
+.box-shadow_inset01                   { box-shadow: inset 5px 5px;}
+.box-shadow_inset01_color             { box-shadow: inset 5px 5px           #000;}
+.box-shadow_inset01_color_blur        { box-shadow: inset 5px 5px 15px      #000;}
+.box-shadow_inset01_color_spread      { box-shadow: inset 5px 5px  0   10px #000;}
+.box-shadow_inset01_color_blur_spread { box-shadow: inset 5px 5px 15px 10px #000;}
+.box-shadow_inset01_colorRGB             { box-shadow: inset 5px 5px           rgba(0, 0, 0, .5);}
+.box-shadow_inset01_colorRGB_blur        { box-shadow: inset 5px 5px 15px      rgba(0, 0, 0, .5);}
+.box-shadow_inset01_colorRGB_spread      { box-shadow: inset 5px 5px  0   10px rgba(0, 0, 0, .5);}
+.box-shadow_inset01_colorRGB_blur_spread { box-shadow: inset 5px 5px 15px 10px rgba(0, 0, 0, .5);}
+
+.box-shadow02       { box-shadow:       0 0 20px #000;}
+.box-shadow02_inset { box-shadow: inset 0 0 20px #000;}
+.box-shadow02_double { box-shadow:      0 0 20px #000, inset 0 0 20px #000;}
+
+/* sampleXX */
+div.flex p.sample01,
+div.flex p.sample02,
+div.flex p.sample03 {
+color:#663300;
+background: #F7EFE3;
+box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+position: relative;
+}
+
+.sample01:before,
+.sample01:after {
+background: #000;
+box-shadow: 0 15px 15px rgba(0, 0, 0, .8);
+content: "";
+width: 45%;
+max-width: 80%;
+position: absolute;
+top: 80%;
+bottom: 20px;
+z-index: -1;
+}
+.sample01:before {
+left: 10px;
+-webkit-transform: rotate(-5deg);
+   -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+     -o-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+}
+.sample01:after {
+right: 10px;
+-webkit-transform: rotate(5deg);
+   -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+     -o-transform: rotate(5deg);
+        transform: rotate(5deg);
+}
+
+.sample02:before {
+box-shadow: 0 0 30px 3px rgba(255, 255, 255, 1);
+content: "";
+position: absolute;
+left: 50%;
+right: 50%;
+top: 10%;
+bottom: 10%;
+}
+.sample02:after {
+background: #000;
+border-radius: 100px 100px 100px 100px / 15px 15px 15px 15px;
+box-shadow: 0 0 15px rgba(0, 0, 0, .4);
+content: "";
+position: absolute;
+left: 10px;
+right: 10px;
+top: 0;
+bottom: 0;
+z-index: -1;
+}
+
+.sample03:before {
+box-shadow: 0 0 30px 3px rgba(255, 255, 255, 1);
+content: "";
+position: absolute;
+left: 10%;
+right: 10%;
+top: 50%;
+bottom: 50%;
+}
+.sample03:after {
+background: #000;
+border-radius: 15px 15px 15px 15px / 100px 100px 100px 100px ;
+box-shadow: 0 0 15px rgba(0, 0, 0, .4);
+content: "";
+position: absolute;
+left: 0;
+right: 0;
+top: 10px;
+bottom: 10px;
+z-index: -1;
+}
+
+</style>
+</head>
+<body>
+
+<h1>box-shadow</h1>
+<p>* = Optional</p>
+
+<div class="flex">
+
+<div>
+<p class="box-shadow01">                  horizontal:5px<br>vertical:5px</p>
+<p class="box-shadow01_color">            horizontal:5px<br>vertical:5px<br>                                              color*</p>
+<p class="box-shadow01_color_blur">       horizontal:5px<br>vertical:5px<br>blur radius:15px*<br>                         color*</p>
+<p class="box-shadow01_color_spread">     horizontal:5px<br>vertical:5px<br>                     spread distance:10px*<br>color*</p>
+<p class="box-shadow01_color_blur_spread">horizontal:5px<br>vertical:5px<br>blur radius:15px*<br>spread distance:10px*<br>color*</p>
+</div>
+
+<div>
+<p class="box-shadow01">                     horizontal:5px<br>vertical:5px</p>
+<p class="box-shadow01_colorRGB">            horizontal:5px<br>vertical:5px<br>                                              color(rgb)*</p>
+<p class="box-shadow01_colorRGB_blur">       horizontal:5px<br>vertical:5px<br>blur radius:15px*<br>                         color(rgb)*</p>
+<p class="box-shadow01_colorRGB_spread">     horizontal:5px<br>vertical:5px<br>                     spread distance:10px*<br>color(rgb)*</p>
+<p class="box-shadow01_colorRGB_blur_spread">horizontal:5px<br>vertical:5px<br>blur radius:15px*<br>spread distance:10px*<br>color(rgb)*</p>
+</div>
+
+<div>
+<p class="box-shadow_inset01">                  inset* <br>horizontal:5px<br>vertical:5px</p>
+<p class="box-shadow_inset01_color">            inset* <br>horizontal:5px<br>vertical:5px<br>                                              color*</p>
+<p class="box-shadow_inset01_color_blur">       inset* <br>horizontal:5px<br>vertical:5px<br>blur radius:15px*<br>                         color*</p>
+<p class="box-shadow_inset01_color_spread">     inset* <br>horizontal:5px<br>vertical:5px<br>                     spread distance:10px*<br>color*</p>
+<p class="box-shadow_inset01_color_blur_spread">inset* <br>horizontal:5px<br>vertical:5px<br>blur radius:15px*<br>spread distance:10px*<br>color*</p>
+</div>
+
+<div>
+<p class="box-shadow_inset01">                     inset* <br>horizontal:5px<br>vertical:5px</p>
+<p class="box-shadow_inset01_colorRGB">            inset* <br>horizontal:5px<br>vertical:5px<br>                                              color(rgb)*</p>
+<p class="box-shadow_inset01_colorRGB_blur">       inset* <br>horizontal:5px<br>vertical:5px<br>blur radius:15px*<br>                         color(rgb)*</p>
+<p class="box-shadow_inset01_colorRGB_spread">     inset* <br>horizontal:5px<br>vertical:5px<br>                     spread distance:10px*<br>color(rgb)*</p>
+<p class="box-shadow_inset01_colorRGB_blur_spread">inset* <br>horizontal:5px<br>vertical:5px<br>blur radius:15px*<br>spread distance:10px*<br>color(rgb)*</p>
+</div>
+
+<div>
+<p class="box-shadow02">                 horizontal:0<br>vertical:0<br>blur radius:20px*<br>color*</p>
+<p class="box-shadow02_inset">inset* <br>horizontal:0<br>vertical:0<br>blur radius:20px*<br>color*</p>
+<p class="box-shadow02_double"> double</p>
+</div>
+
+<div>
+<p class="sample01">:before<br>:after</p>
+<p class="sample02">:before<br>:after</p>
+<p class="sample03">:before<br>:after</p>
+</div>
+
+</div>
+
+</body>
+</html>
