@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8" />
+<title>Table model</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.14.0/build/cssreset/cssreset-min.css">
+<style type="text/css">
+/* base */
+body{
+font-family: Arial, Helvetica,"メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HiraKakuPro-W3","ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+margin: 10px;
+}
+h1 {
+font-family: Georgia;
+font-size: 2em;
+margin: 1em 0 .3em;
+}
+div span {
+font-family: Georgia;
+font-size: 2em;
+}
+.note {
+font-size: 80%;
+color: #999;
+}
+
+/* item */
+div {
+background: #ccc;
+}
+div > div {
+background: #bbb;
+}
+div,
+p {
+	padding: 10px 0;
+}
+
+/* display : CSS 1 */
+.display_none {
+display: none;
+}
+.display_inline {
+display: inline;
+}
+.display_block {
+display: block;
+border: #333 dotted 1px;
+}
+.display_list-item {
+display: list-item;
+}
+
+/* display : CSS 2.1*/
+.display_inline-block {
+display: inline-block;
+}
+.display_inline-table {
+display: inline-table;
+}
+
+.display_table {
+display: table;
+background: #bbb;
+margin-bottom: 10px;
+}
+.widthMax {
+width: 100%;
+}
+.display_table-row { /* tr */
+display: table-row;
+background: #aaa;
+}
+.display_table-cell { /* td */
+display: table-cell;
+background: #999;
+border: #333 solid 1px;
+}
+.display_table-caption { /* caption */
+display: table-caption;
+background: #888;
+}
+.display_table-header-group { /* thead */
+display: table-header-group;
+}
+.display_table-header-group,
+.display_table-header-group .display_table-cell {
+background: #666;
+}
+.display_table-row-group { /* tbody */
+display: table-row-group;
+background: #777;
+}
+.display_table-footer-group { /* tfoot */
+display: table-footer-group;
+}
+.display_table-footer-group,
+.display_table-footer-group .display_table-cell {
+background: #666;
+}
+</style>
+</head>
+<body>
+
+<h1>display: table-cell;</h1>
+<p>親に横幅の指定がない場合</p>
+<div class="display_table">
+	<p class="display_table-cell">display: table-cell; </p>
+	<p class="display_table-cell">display: table-cell; </p>
+	<p class="display_table-cell">display: table-cell; </p>
+</div>
+<div class="display_table">
+	<p class="display_table-cell" style="width: 200px;">display: table-cell; <br> width: 200px;</p>
+	<p class="display_table-cell" style="width: 200px;">display: table-cell; <br> width: 200px;</p>
+	<p class="display_table-cell" style="width: 200px;">display: table-cell; <br> width: 200px;</p>
+</div>
+<p>親に横幅の指定がある場合</p>
+<div class="display_table widthMax">
+	<p class="display_table-cell">display: table-cell; </p>
+	<p class="display_table-cell">display: table-cell; </p>
+	<p class="display_table-cell">display: table-cell; </p>
+</div>
+<div class="display_table widthMax">
+	<p class="display_table-cell" style="width: 200px;">display: block; <br> width: 200px;(NG)</p>
+	<p class="display_table-cell" style="width: 200px;">display: block; <br> width: 200px;(NG)</p>
+	<p class="display_table-cell" style="width: 200px;">display: block; <br> width: 200px;(NG)</p>
+</div>
+<div class="display_table widthMax">
+	<p class="display_table-cell" style="margin: 10px;">display: table-cell; <br> margin: 10px;(NG)</p>
+	<p class="display_table-cell" style="margin: 10px;">display: table-cell; <br> margin: 10px;(NG)</p>
+	<p class="display_table-cell" style="margin: 10px;">display: table-cell; <br> margin: 10px;(NG)</p>
+</div>
+<div class="display_table widthMax">
+	<p class="display_table-cell" style="width: 30%;">display: table-cell; <br> width: 30%;</p>
+	<p class="display_table-cell" style="width: 50%;">display: table-cell; <br> width: 50%;</p>
+	<p class="display_table-cell" style="width: 20%;">display: table-cell; <br> width: 20%;</p>
+</div>
+<div class="display_table widthMax">
+	<p class="display_block" style="width: 200px;">display: block; <br> width: 200px;</p>
+	<p class="display_table-cell" style="width: 60%;">display: table-cell; <br> width: 60%;</p>
+	<p class="display_table-cell" style="width: 40%;">display: table-cell; <br> width: 40%;</p>
+</div>
+
+<h1>display: table-row;</h1>
+<div class="display_table widthMax">
+	<p class="display_table-cell">display: table-cell;</p>
+	<p class="display_table-cell">display: table-cell;</p>
+	<p class="display_table-cell">display: table-cell;</p>
+	<p class="display_table-cell">display: table-cell;</p>
+	<p class="display_table-cell">display: table-cell;</p>
+	<p class="display_table-cell">display: table-cell;</p>
+</div>
+
+<div class="display_table widthMax">
+	<div class="display_table-row">
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+	</div>
+	<div class="display_table-row">
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+	</div>
+</div>
+
+<div class="display_table">
+	<div class="display_table-row">
+		<p class="display_table-cell" style="width: 100px;">display: table-cell; <br> width: 100px;</p>
+		<p class="display_table-cell" style="width: 100px;">display: table-cell; <br> width: 100px;</p>
+		<p class="display_table-cell" style="width: 100px;">display: table-cell; <br> width: 100px;</p>
+	</div>
+	<div class="display_table-row">
+		<p class="display_table-cell" style="width: 150px;">display: table-cell; <br> width: 150px;</p>
+		<p class="display_table-cell" style="width: 150px;">display: table-cell; <br> width: 150px;</p>
+	</div>
+</div>
+
+<h1>display: table-xxx-group;</h1>
+<div class="display_table">
+	<div class="display_table-header-group">
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+	</div>
+	<div class="display_table-row-group">
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+	</div>
+	<div class="display_table-footer-group">
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+	</div>
+</div>
+
+<div class="display_table">
+	<div class="display_table-header-group">
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+	</div>
+	<div class="display_table-row-group">
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+	</div>
+	<div class="display_table-footer-group">
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+	</div>
+</div>
+
+<div class="display_table widthMax">
+	<div class="display_table-header-group">
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+	</div>
+	<div class="display_table-row-group">
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+	</div>
+	<div class="display_table-footer-group">
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+	</div>
+</div>
+
+<div class="display_table">
+	<div class="display_table-header-group">
+		<p class="display_table-cell" style="width: 200px;">display: table-cell; <br> width: 200px;</p>
+		<p class="display_table-cell" style="width: 100px;">display: table-cell; <br> width: 100px;</p>
+	</div>
+	<div class="display_table-row-group">
+		<p class="display_table-cell" style="width: 100px;">display: table-cell; <br> width: 100px;</p>
+		<p class="display_table-cell" style="width: 100px;">display: table-cell; <br> width: 100px;</p>
+		<p class="display_table-cell" style="width: 100px;">display: table-cell; <br> width: 100px;</p>
+	</div>
+	<div class="display_table-footer-group">
+		<p class="display_table-cell" style="width: 150px;">display: table-cell; <br> width: 150px;</p>
+		<p class="display_table-cell" style="width: 150px;">display: table-cell; <br> width: 150px;</p>
+	</div>
+</div>
+
+
+<h1>display: table-xxx-group; + display: table-row;</h1>
+<div class="display_table">
+	<div class="display_table-header-group">
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+	</div>
+	<div class="display_table-row-group">
+		<div class="display_table-row">
+			<p class="display_table-cell">display: table-cell;</p>
+			<p class="display_table-cell">display: table-cell;</p>
+			<p class="display_table-cell">display: table-cell;</p>
+		</div>
+		<div class="display_table-row">
+			<p class="display_table-cell">display: table-cell;</p>
+			<p class="display_table-cell">display: table-cell;</p>
+			<p class="display_table-cell">display: table-cell;</p>
+		</div>
+	</div>
+	<div class="display_table-footer-group">
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+		<p class="display_table-cell">display: table-cell;</p>
+	</div>
+</div>
+
+<!-- ////////////////////////////////// -->
+
+</body>
+</html>
